@@ -22,7 +22,7 @@ Base Code:
        - sessions.js middleware instead of model
        - Log In
        - Log Out
-     - Lists (Kai)
+     - Lists (Adam)
        - create
        - getByUser()
        - getByID()
