@@ -6,19 +6,17 @@ const List = require('../models/list')
 
 //routes
 
-router.get('/', (req,res) => {
+router.get('/', (req, res) => {
     List
         .findAll()
         .then(lists => res.json(lists))
 })
 
 router.post('/', (req, res) => {
-    const user_id = req.body.user_id
-    const name = req.body.name
-    const description = req.body.description
+    const { userID, name, description } = req.body
 
     List
-        .create(user_id, name, description)
+        .create(userID, name, description)
         .then(list => res.json(list))
 })
 
