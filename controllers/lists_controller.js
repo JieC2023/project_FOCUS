@@ -8,7 +8,7 @@ const List = require('../models/list')
 
 router.get('/', (req, res) => {
     List
-        .findAll()
+        .getByUser()
         .then(lists => res.json(lists))
 })
 
@@ -20,6 +20,20 @@ router.post('/', (req, res) => {
         .then(list => res.json(list))
 })
 
+router.put('/update/:id', (req, res) => {
+    const { user_id, name, description }= req.body
+    const listID = req.params.listID
+    List
+        .updateByID(user_id, name, description, listID)
+        .then(list => res.json({message: `list ${list.list_id} has been updated!`}))
+})
+
+router.get('/:id', (req, res) => {
+    const listID = req.params.listID
+    List
+        .getByID(listID)
+        .then(list => res.json(list))
+})
 router.delete('/:id', (req, res) => {
     const listID = req.params.id
 
