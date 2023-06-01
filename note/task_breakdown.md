@@ -13,29 +13,44 @@ Base Code:
    - Client
      - index.html (Adam)
      - CSS
+     - Pages
+       - Home (Adam & Jie)
+         - Header & Footer Setup
+       - To-Do List (Adam & Jie)
+         - Step 1: One task
+         - Step 2: Two more
+         - Step 3: List
+         - Step 4: Account
+       - Random Task Generator (Kai & Adrian)
+         - API Connection
+           - Surprise Result
+           - Filters
+             - Result
+           - Adding generated task to list
    - Models, Controllers
-     - Users (Adrian)
-       - create
-       - getUserByEmail()
-       - getUserByID()
+     - ~~Users (Adrian)~~
+       - ~~create~~
+       - ~~getUserByEmail()~~
+       - ~~getUserByID()~~
      - Sessions (Adrian)
-       - sessions.js middleware instead of model
-       - Log In
+       - ~~sessions.js middleware instead of model~~
+       - ~~Log In~~
        - Log Out
      - Lists (Adam)
-       - create
+       - ~~create~~
        - getByUser()
        - getByID()
        - updateByID()
-       - deleteByID()
-     - Tasks (Kai)
-       - getByList()
-       - getByID()
-       - updateByID()
-       - deleteByID()
- - Database Code (Jie)
-   - schema.sql
-   - db.js
+       - ~~deleteByID()~~
+     - ~~Tasks (Kai)~~
+       - ~~create~~
+       - ~~getByList()~~
+       - ~~getByID()~~
+       - ~~updateByID()~~
+       - ~~deleteByID()~~
+ - ~~Database Code (Jie)~~
+   - ~~schema.sql~~
+   - ~~db.js~~
 
 # AFTER BASE COMPLETE
 Functionality by priority:
