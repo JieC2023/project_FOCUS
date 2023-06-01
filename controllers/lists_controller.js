@@ -24,7 +24,7 @@ router.delete('/:id', (req, res) => {
     const listID = req.params.id
 
     List
-        .delete(listID)
+        .deleteByID(listID)
         .then(() => res.json({message: 'deleted successfully'}))
 })
 
