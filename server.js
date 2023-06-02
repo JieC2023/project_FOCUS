@@ -1,5 +1,13 @@
 const express = require('express')
+// middlewares
+const logger = require('./middlewares/logger')
+const sessions = require('./middlewares/sessions')
 
+// controllers
+const tasksController = require('./controllers/tasks_controller')
+const listsController = require('./controllers/lists_controller')
+const usersController = require('./controllers/users_controller')
+const sessionsController = require('./controllers/sessions_controller')
 const app = express()
 const port = process.env.PORT || 3001
 
@@ -13,7 +21,7 @@ app.listen(port, () => console.log(`listening on http://localhost:${port}`))
 //     |
 //     V
 // middleware function to log request info in the terminal
-// app.use(logger)
+app.use(logger)
 //     |
 //     V
 // middleware to send back our SPA (Single-Page Application)
@@ -26,10 +34,10 @@ app.use(express.json())
 app.use(sessions)
        //V
 
-// app.use('/api/tasks', tasksController)
+app.use('/api/tasks', tasksController)
 app.use('/api/list', listsController)
-// app.use('/api/users', usersController)
-// app.use('/api/sessions', sessionsController)
+app.use('/api/users', usersController)
+app.use('/api/sessions', sessionsController)
 
 //     |
 //     V
