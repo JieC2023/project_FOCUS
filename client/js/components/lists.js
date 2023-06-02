@@ -12,6 +12,7 @@ function renderTasks() {
     <header>
       <h2>${task.task_name}</h2>
       <span class="material-symbols-outlined delete" onClick="deleteTask(event)">delete</span>
+      <span onClick="updateTask(event)">update</span>
     </header>
     <p>${task.description}</p>
   </section>
