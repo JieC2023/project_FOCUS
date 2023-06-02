@@ -15,6 +15,7 @@ function renderTasks() {
       <span onClick="updateTask(event)">update</span>
     </header>
     <p>${task.description}</p>
+    <p>${task.priority_level}</p>
   </section>
 `).join('')
 }
@@ -23,11 +24,13 @@ function deleteTask(event) {
   const deleteBtn = event.target
   const taskDOM = deleteBtn.closest('.task')
   const taskId = taskDOM.dataset.id
-  fetch(`/api/tasks/${taskId}`, {
-    method: 'DELETE'
+  console.log(taskId)
+  fetch(`/api/tasks/delete/${taskId}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' }
   })
     .then(() => {
-      state.tasks = state.tasks.filter(t => t.id != taskId)
-      renderTaskList()
+      state.tasks = state.tasks.filter(t => t.task_id != taskId)
+      renderList()
     })
 }
