@@ -42,4 +42,4 @@ router.delete('/:id', (req, res) => {
         .then(() => res.json({message: 'deleted successfully'}))
 })
 
-mosule.exports = router
+module.exports = router

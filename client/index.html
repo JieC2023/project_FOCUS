@@ -7,16 +7,23 @@
     <title>Document</title>
       <!-- material icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <script src="/js/initialize.js"></script>
+  <script defer src="/js/components/add_task.js"></script>
+  <script defer src="/js/components/lists.js"></script>
+  <script defer src="./js/components/sign_up.js"></script>
+  <script defer src="./js/components/login.js"></script>
+
 </head>
 <body>
     <h1>Welcome to our Task Manager</h1>
     <nav class="header-nav">
         <ul>
-            <li onClick="">add Task</li>
-            <li onClick="">edit Task</li>
+            <li onClick="renderAddTask()">add Task</li>
+            <li onClick="renderList()">edit</li>
             <li onClick="renderTaskGenerator()">random Task</li>
-            <li onClick="">Sign Up</li>
-            <li onClick="">Login</li>
+            <li onClick="renderSignUp()">Sign Up</li>
+            <li onClick="renderLogin()">Login</li>
         </ul>
     </nav>
 
