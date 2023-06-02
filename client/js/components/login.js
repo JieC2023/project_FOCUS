@@ -35,7 +35,7 @@ function logIn(event) {
         renderLogin()
         renderError(res.error)
       } else {
-        state.loggedInUser = res
+        state.loggedInUser = res.email
         renderList()
       }
     })
