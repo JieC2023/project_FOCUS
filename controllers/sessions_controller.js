@@ -20,7 +20,7 @@ User
 
         if (user && isValidPassword) { 
             //log the user in
-            req.session.userId = user.id
+            req.session.userId = user.user_id
             res.json({ email: user.email })
          }
        }
@@ -28,11 +28,15 @@ User
 })
 router.get('/',(req, res) => { 
     const userId = req.session.userId
+    console.log(req.session)
     // if logged in:
     if (userId) {
+        console.log(`userId ${userId} found!`)
     User
-    .then(email => res.json({ result: 'successful', email: email }))
+    .findById(userId)
+    .then(user => res.json({ result: 'successful', email: user.email }))
     } else { 
+        console.log(`no userId found.`)
       res.json({})
     }
 })

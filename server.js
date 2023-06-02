@@ -35,7 +35,7 @@ app.use(sessions)
        //V
 
 app.use('/api/tasks', tasksController)
-app.use('/api/list', listsController)
+app.use('/api/lists', listsController)
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
 
