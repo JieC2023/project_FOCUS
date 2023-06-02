@@ -23,9 +23,8 @@ Base Code:
          - Step 4: Account
        - Random Task Generator (Kai & Adrian)
          - API Connection
-           - Surprise Result
            - Filters
-             - Result
+               - Result
            - Adding generated task to list
    - Models, Controllers
      - ~~Users (Adrian)~~
