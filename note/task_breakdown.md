@@ -11,21 +11,10 @@ Base Code:
    - server.js (Adam)
  - MCC Architecture
    - Client
-     - index.html (Adam)
-     - CSS
-     - Pages
-       - Home (Adam & Jie)
-         - Header & Footer Setup
-       - To-Do List (Adam & Jie)
-         - Step 1: One task
-         - Step 2: Two more
-         - Step 3: List
-         - Step 4: Account
-       - Random Task Generator (Kai & Adrian)
-         - API Connection
-           - Filters
-               - Result
-           - Adding generated task to list
+     - ~~index.html (Adam)~~
+     - CSS (Kai)
+     - Home Menu (Kai)
+       - Header & Footer Setup
    - Models, Controllers
      - ~~Users (Adrian)~~
        - ~~create~~
@@ -35,11 +24,11 @@ Base Code:
        - ~~sessions.js middleware instead of model~~
        - ~~Log In~~
        - Log Out
-     - Lists (Adam)
+     - ~~Lists (Adam)~~
        - ~~create~~
-       - getByUser()
-       - getByID()
-       - updateByID()
+       - ~~getByUser()~~
+       - ~~getByID()~~
+       - ~~updateByID()~~
        - ~~deleteByID()~~
      - ~~Tasks (Kai)~~
        - ~~create~~
@@ -54,12 +43,22 @@ Base Code:
 # AFTER BASE COMPLETE
 Functionality by priority:
  - To-Do List & Task Management
-   - 
- - User Accounts
-   - user CRUD
-   - sessions
+   - ~~Task CRUD (Adam & Jie)~~ - Just needs update (Adam)
+   - List CRUD (Jie)
+   - HTML for the process
+     - ~~Step 1: One task~~
+     - Step 2: "Well done! Let's make two more."
+     - Step 3: List (Wait for list implementation)
+     - Step 4: Account
+ - ~~User Accounts~~
+   - ~~user CRUD~~
+   - ~~sessions~~
  - RTG (Random Task Generator)
-   - 
+   - ~~Surprise Me (Random Task)~~
+   - Filters (Kai)
+     - Filtered request (Kai)
+   - Add generated task to list (if user logged in)
+   - HTML for menu
  - RSG (Random Stuff) *Ideal, but drop if we have time issues
    - 
  - RJG (Random Jokes) *BONUS
