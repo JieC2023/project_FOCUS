@@ -5,7 +5,7 @@ function renderAddTask() {
 				<h2>Add Task</h2>
 				<fieldset>
 					<label for="">Task: </label>
-					<input type="text" name="task_name">
+					<input type="text" name="taskName">
 				</fieldset>
 				<fieldset>
 					<label for="">Description: </label>
@@ -13,7 +13,7 @@ function renderAddTask() {
 				</fieldset>
 				<fieldset>
 					<label for="">Priority: </label>
-					<input type="text" name="priority_level">
+					<input type="text" name="priorityLevel">
 				</fieldset>
 				<button>Add Task</button>
 			</form>
@@ -26,6 +26,8 @@ function createTask(event) {
 	const form = event.target
 
 	const data = Object.fromEntries(new FormData(form))
+
+	console.log(data)
 
 	fetch('/api/tasks', {
 		method: 'POST',

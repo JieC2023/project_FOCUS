@@ -43,7 +43,7 @@ const Task = {
     deleteByID: task_id => {
         const sql = `
         DELETE FROM tasks 
-        WHERE task_id = 1 
+        WHERE task_id = $1 
         RETURNING *`
         const parameters = [task_id]
         return db

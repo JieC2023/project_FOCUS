@@ -5,7 +5,7 @@ function renderUpdateTask() {
 				<h2>Update Task</h2>
 				<fieldset>
 					<label for="">Task: </label>
-					<input type="text" name="task_name">
+					<input type="text" name="taskName">
 				</fieldset>
 				<fieldset>
 					<label for="">Description: </label>
@@ -13,7 +13,7 @@ function renderUpdateTask() {
 				</fieldset>
 				<fieldset>
 					<label for="">Priority: </label>
-					<input type="text" name="priority_level">
+					<input type="text" name="priorityLevel">
 				</fieldset>
 				<button>Update Task</button>
 			</form>
@@ -21,7 +21,7 @@ function renderUpdateTask() {
 	`
 }
 
-function updateTask(event) {
-	const updateBtn =event.target
-	const 
-}
+// function updateTask(event) {
+// 	const updateBtn =event.target
+// 	const 
+// }
