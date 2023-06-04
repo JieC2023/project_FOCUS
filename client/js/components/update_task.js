@@ -22,28 +22,12 @@ function renderUpdateTask() {
 </section>
 `
 }
-// function updateTask(event, taskID) {
-//     event.preventDefault();
-//     const form = event.target;
-//     const data = Object.fromEntries(new FormData(form));
 
-//     fetch(`/api/tasks/update/${taskID}`, {
-//         method: 'PUT',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify(data)
-//     })
-//         .then(res => res.json())
-//         .then(updatedTask => {
-//             const index = state.tasks.findIndex(task => task.task_id === taskID);
-//             state.tasks[index] = updatedTask;
-
-//             renderList();
-//         });
-// }
 function updateTask(event) {
 	const updateBtn = event.target;
 	const taskDOM = updateBtn.closest('.task');
 	const taskId = taskDOM.dataset.id;
+	console.log(taskId)
 	const updatedData = {
 	  taskName: 'Updated Task Name',
 	  description: 'Updated Description',
@@ -58,7 +42,6 @@ function updateTask(event) {
 	  .then(updatedTask => {
 
 		const index = state.tasks.findIndex(t => t.task_id === taskId);
-		// Update the task object with the updated values
 		state.tasks[index] = updatedTask;
 		renderList();
 	  });
