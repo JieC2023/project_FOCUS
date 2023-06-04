@@ -36,7 +36,8 @@ function logIn(event) {
         renderError(res.error)
       } else {
         state.loggedInUser = res.email
-        renderList()
+        checkUser()
+        renderHome()
       }
     })
 }

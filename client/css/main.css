@@ -1,0 +1,106 @@
+ /* Color Palette */
+/* https://www.schemecolor.com/pale-gold-pink.php */
+/* Medium Champagne: #F0DEA3 */
+/* Crayola's Gold: #E6C593 */
+/* Burlywood: #E0B484 */
+/* Kobi: #DE9EB9 */
+/* Queen Pink: #F2D0D4 */
+/* Seashell: #FAF4F1 */
+
+/* set box-sizing for easier design */
+* {
+    box-sizing: border-box;
+}
+/* remove margins from body and set a global font and background color */
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: white;
+}
+header {
+    /* fixes header to top of page (even when scrolling) */
+    position: sticky;
+    top: 0;
+    /* set header size (width of screen) */
+    width: 100%;
+    /* ensure header displays over other content when overlapping and add background color (inherited from body) as it's transparent by default */
+    z-index: 1;
+    background-color: #F0DEA3;
+    /* basic padding */
+    padding-top: 15px;
+    padding-bottom: 5px;
+    /* set as a flex display and arrange contained content */
+    display: flex;
+    justify-content: space-around;
+    /* add bottom border and some shadow so that it looks like it's above the main content */
+    border-bottom: 1px solid grey;
+    box-shadow: 0 1px 5px grey;
+}
+#logo {
+    font-size: 2.3em;
+}
+/* remove margins from headers and center text in their fields */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    text-align: center;
+}
+.user-controls {
+    display: flex;
+    align-self: center;
+    align-items: baseline;
+    gap: 10px;
+}
+#page {
+    background-color: #FAF4F1;
+    width: 100vw;
+    height: 85.5vh;
+    margin: 0;
+    padding: 2vh 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    gap: 1em;
+}
+footer {
+    /*  above, so below */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6vh;
+    z-index: 1;
+    background-color: #F0DEA3;
+    padding: 12px 0;
+    border-top: 1px solid grey;
+    box-shadow: 0 -1px 5px grey;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 4vw;
+    justify-content: space-evenly;
+}
+li {
+    display: inline;
+}
+.link {
+    cursor: pointer;
+}
+.button {
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 0.1em 0.3em;
+    border-radius: 0.4em;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0 0 2px grey;
+}
+@media only screen and (min-width: 430px) {
+    body {
+        font-size: 1.5rem;
+    }
+    #page {
+        padding: 3vh 5vw;
+    }
+}

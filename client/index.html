@@ -6,32 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
       <!-- material icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-  <script src="/js/initialize.js"></script>
-  <script defer src="/js/components/add_task.js"></script>
-  <script defer src="/js/components/lists.js"></script>
-  <script defer src="./js/components/sign_up.js"></script>
-  <script defer src="./js/components/login.js"></script>
-  <script defer src="/js/components/update.js"></script>
-  <script defer src="/js/components/task_generator.js"></script>
-  <script defer src="/js/components/bored_interface.js"></script>
+      <!-- font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
 
+      <!-- stylesheet/CSS connections -->
+    <link rel="stylesheet" href="./css/main.css">
+
+      <!-- script connections -->
+    <script src="/js/initialize.js"></script>
+    <script defer src="/js/components/add_task.js"></script>
+    <script defer src="/js/components/lists.js"></script>
+    <script defer src="./js/components/sign_up.js"></script>
+    <script defer src="./js/components/login.js"></script>
+    <script defer src="/js/components/update.js"></script>
+    <script defer src="/js/components/task_generator.js"></script>
+    <script defer src="/js/components/bored_interface.js"></script>
+    <script defer src="/js/components/info_page.js"></script>
+    <script defer src="/js/components/add_list.js"></script>
+    <script defer src="/js/components/list_list.js"></script>
 </head>
 <body>
-    <h1>Welcome to our Task Manager</h1>
-    <nav class="header-nav">
-        <ul>
-            <li onClick="renderAddTask()">add Task</li>
-            <li onClick="renderList()">edit</li>
-            <li onClick="renderTaskGenerator()">random Task</li>
-            <li onClick="renderSignUp()">Sign Up</li>
-            <li onClick="renderLogin()">Login</li>
-        </ul>
-    </nav>
+      <!-- section to load in individual page CSS (loading home CSS on site entry) -->
+    <section class="page-CSS">
+        <link rel="stylesheet" href="./css/home.css">
+    </section>
 
-    <main id="page" class="content">
+      <!-- header w/ logo and user controls -->
+    <header>
+        <h1 class="link" id="logo" onClick="renderHome()">Focus.</h1>
+        <section class="user-controls">
+            <ul>
+                <li class="button" onClick="renderSignUp()">Sign Up</li>
+                <li class="button" onClick="renderLogin()">Login</li>
+            </ul>
+        </section>
+    </header>
 
-    </main>
+      <!-- section to load page content into (loading home content on entry) -->
+    <section id="page" class="content">
+        <h1 class="link" onClick="renderAddTask()">Get Started!</h1>
+        <h2 class="link" onClick="renderTaskGenerator()">
+            I'm bored... <br>
+            Any suggestions?
+        </h2>
+    </section>
+
+      <!-- footer section for a few links to longer pages (about, how to use, etc.) -->
+    <footer>
+        <nav class="footer-nav">
+            <ul>
+                <li class="link" onClick="renderAbout()">Info</li>
+                <li class="link" onClick="renderAddList()">New List</li>
+                <li class="link" onClick="renderListList()">Show Lists</li>
+                <li class="link" onClick="renderList()">Show List</li>
+                <li class="link" onClick="">How-To</li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
