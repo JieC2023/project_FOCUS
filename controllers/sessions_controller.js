@@ -34,7 +34,7 @@ router.get('/',(req, res) => {
         console.log(`userId ${userId} found!`)
     User
     .findById(userId)
-    .then(user => res.json({ result: 'successful', email: user.email }))
+    .then(user => res.json({ result: 'successful', user: user }))
     } else { 
         console.log(`no userId found.`)
       res.json({})

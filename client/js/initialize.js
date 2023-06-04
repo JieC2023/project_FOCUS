@@ -22,9 +22,9 @@ function checkUser() {
     .then(res => res.json())
     .then(data => {
       if (data.result === 'successful') {
-          state.loggedInUser = data.email
+          state.loggedInUser = data.user.email
           document.querySelector('.user-controls ul').innerHTML = `
-              <h3>Welcome back!</h3>
+              <h3>Welcome back, ${data.user.name}!</h3>
               <span class="button" onClick="">Log Out</span>
           `
       } else {
