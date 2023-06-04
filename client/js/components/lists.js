@@ -26,8 +26,7 @@ function deleteTask(event) {
   const taskId = taskDOM.dataset.id
   console.log(taskId)
   fetch(`/api/tasks/delete/${taskId}`, {
-    method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' }
+    method: 'DELETE'
   })
     .then(() => {
       state.tasks = state.tasks.filter(t => t.task_id != taskId)

@@ -14,6 +14,14 @@ function renderHome() {
             I'm bored... <br>
             Any suggestions?
         </h2>
+        <ul class="temporary">
+            <li>Tasks:</li>
+            <li class="link" onClick="renderAddTask()">Add Task</li>
+            <li class="link" onClick="renderTasks()">Show Tasks</li>
+            <li>Lists:</li>
+            <li class="link" onClick="renderAddList()">New List</li>
+            <li class="link" onClick="renderUserLists()">Show Lists</li>
+        </ul>
     `
 }
 
@@ -24,7 +32,7 @@ function checkUser() {
       if (data.result === 'successful') {
           state.loggedInUser = data.user.email
           document.querySelector('.user-controls ul').innerHTML = `
-              <h3>Welcome back, ${data.user.name}!</h3>
+              <h3>Welcome back, <span class="link" onClick="">${data.user.name}</span>!</h3>
               <span class="button" onClick="">Log Out</span>
           `
       } else {

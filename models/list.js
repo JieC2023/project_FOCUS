@@ -46,7 +46,7 @@ const List = {
         const sql = 
         `
         DELETE FROM lists 
-        WHERE id = $1
+        WHERE list_id = $1
         `
         return db.query(sql, [listID])
     }

@@ -31,8 +31,8 @@ function createList(event) {
 		body: JSON.stringify(data)
 	})
 		.then(res => res.json())
-		.then(task => {
-			state.tasks.push(task)
-			renderListList()
+		.then(list => {
+			state.lists.push(list)
+			renderUserLists()
 		})
 }

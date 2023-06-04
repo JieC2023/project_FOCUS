@@ -1,4 +1,4 @@
-function renderListList() {
+function renderUserLists() {
   document.querySelector('#page').innerHTML = `
     <section class="list-list">
       ${renderLists()}
@@ -26,7 +26,7 @@ function deleteList(event) {
     method: 'DELETE'
   })
     .then(() => {
-      state.lists = state.lists.filter(l => l.id != listId)
-      renderListList()
+      state.lists = state.lists.filter(l => l.list_id != listId)
+      renderUserLists()
     })
 }

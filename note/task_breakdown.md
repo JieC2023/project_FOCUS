@@ -12,9 +12,9 @@ Base Code:
  - MCC Architecture
    - Client
      - ~~index.html (Adam)~~
-     - CSS (Kai)
-     - Home Menu (Kai)
-       - Header & Footer Setup
+     - ~~CSS (Kai)~~
+     - ~~Home Menu (Kai)~~
+       - ~~Header & Footer Setup~~
    - Models, Controllers
      - ~~Users (Adrian)~~
        - ~~create~~
@@ -48,17 +48,19 @@ Functionality by priority:
    - HTML for the process
      - ~~Step 1: One task~~
      - Step 2: "Well done! Let's make two more."
-     - Step 3: List (Wait for list implementation)
-     - Step 4: Account
+     - Step 3: "Nice! Let's make a list to store these."
+     - Step 4: "You have your first list! To store it so you can come back to it later, please create an account."
  - ~~User Accounts~~
    - ~~user CRUD~~
    - ~~sessions~~
+   - Account Menu (Show Lists)
+   - Guest experience (what can a user create/view without logging in?)
  - RTG (Random Task Generator)
    - ~~Surprise Me (Random Task)~~
-   - Filters (Kai)
+   - ~~Filters (Kai)~~
      - Filtered request (Kai)
    - Add generated task to list (if user logged in)
-   - HTML for menu
+   - ~~HTML &~~ CSS for menu
  - RSG (Random Stuff) *Ideal, but drop if we have time issues
    - 
  - RJG (Random Jokes) *BONUS

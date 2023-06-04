@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Focus.</title>
       <!-- material icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
@@ -16,18 +16,29 @@
       <!-- stylesheet/CSS connections -->
     <link rel="stylesheet" href="./css/main.css">
 
-      <!-- script connections -->
+      <!-- initialize script and general pages -->
     <script src="/js/initialize.js"></script>
-    <script defer src="/js/components/add_task.js"></script>
-    <script defer src="/js/components/lists.js"></script>
+    <script defer src="/js/components/info_pages.js"></script>
+
+      <!-- user scripts -->
     <script defer src="./js/components/sign_up.js"></script>
     <script defer src="./js/components/login.js"></script>
-    <script defer src="/js/components/update.js"></script>
+    <script defer src="/js/components/account.js"></script>
+    <script defer src="/js/components/logout.js"></script>
+    <script defer src="/js/components/user_lists.js"></script>
+
+      <!-- task scripts -->
+    <script defer src="/js/components/add_task.js"></script>
+    <script defer src="/js/components/update_task.js"></script>
+
+      <!-- list scripts -->
+    <script defer src="/js/components/add_list.js"></script>
+    <script defer src="/js/components/update_list.js"></script>
+    <script defer src="/js/components/lists.js"></script>
+
+      <!-- task generator (Bored API) scripts -->
     <script defer src="/js/components/task_generator.js"></script>
     <script defer src="/js/components/bored_interface.js"></script>
-    <script defer src="/js/components/info_page.js"></script>
-    <script defer src="/js/components/add_list.js"></script>
-    <script defer src="/js/components/list_list.js"></script>
 </head>
 <body>
       <!-- section to load in individual page CSS (loading home CSS on site entry) -->
@@ -53,6 +64,15 @@
             I'm bored... <br>
             Any suggestions?
         </h2>
+      <!-- temporary list for links while we set up page flow -->
+        <ul class="temporary">
+            <li>Tasks:</li>
+            <li class="link" onClick="renderAddTask()">Add Task</li>
+            <li class="link" onClick="renderTasks()">Show Tasks</li>
+            <li>Lists:</li>
+            <li class="link" onClick="renderAddList()">New List</li>
+            <li class="link" onClick="renderUserLists()">Show Lists</li>
+        </ul>
     </section>
 
       <!-- footer section for a few links to longer pages (about, how to use, etc.) -->
@@ -60,9 +80,8 @@
         <nav class="footer-nav">
             <ul>
                 <li class="link" onClick="renderAbout()">Info</li>
-                <li class="link" onClick="renderAddList()">New List</li>
-                <li class="link" onClick="renderListList()">Show Lists</li>
-                <li class="link" onClick="renderList()">Show List</li>
+                <li class="link" onClick="renderHome()">Home</li>
+                <li class="link" onClick="">Account</li>
                 <li class="link" onClick="">How-To</li>
             </ul>
         </nav>
