@@ -1,6 +1,6 @@
-function renderUpdateTask(task_id) {
+function renderUpdateTask(taskId) {
 	document.querySelector('#page').innerHTML = `
-	<section class='update-task' data-id='${task_id}'>
+	<section class='update-task' data-id='${taskId}'>
     <form action="" onSubmit="updateTask(event)">
         <h2>Update Task</h2>
         <fieldset>
@@ -36,7 +36,7 @@ function updateTask(event) {
 	  .then(res => res.json())
 	  .then(res => {
 
-		const index = state.tasks.findIndex(t => t.task_id === taskId);
+		const index = state.tasks.findIndex(t => t.taskId === taskId);
 		console.log('woof')
 		console.log(typeof taskId)
 		state.tasks[index] = data;

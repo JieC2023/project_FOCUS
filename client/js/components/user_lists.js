@@ -8,7 +8,7 @@ function renderUserLists() {
 
 function renderLists() {
   return state.lists.map(list => `
-  <section class="list" data-id='${list.list_id}'>
+  <section class="list" data-id='${list.listId}'>
     <header>
       <h2>${list.name}</h2>
       <span class="material-symbols-outlined delete" onClick="deleteList(event)">delete</span>
@@ -27,7 +27,7 @@ function deleteList(event) {
     method: 'DELETE'
   })
     .then(() => {
-      state.lists = state.lists.filter(l => l.list_id != listId)
+      state.lists = state.lists.filter(l => l.listId != listId)
       renderUserLists()
     })
 }
