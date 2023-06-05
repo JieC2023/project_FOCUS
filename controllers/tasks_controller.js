@@ -7,7 +7,6 @@ const Task = require('../models/task')
 // routes to go here
 router.post('/', (req, res) => {
     const { listID, taskName, description, dueDate, priorityLevel, status }= req.body
-    console.log(req.body)
     Task
         .create(listID, taskName, description, dueDate, priorityLevel, status)
         .then(task => res.json(task))
@@ -28,7 +27,6 @@ router.get('/:taskID', (req, res) => {
 })
 
 router.put('/update/:taskID', (req, res) => {
-    console.log(req.body)
     const { listID, taskName, description, dueDate, priorityLevel, status }= req.body
     const taskID = req.params.taskID
     Task
