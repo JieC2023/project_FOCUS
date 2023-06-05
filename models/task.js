@@ -32,8 +32,8 @@ const Task = {
     },
     updateById: (listId, taskName, description, dueDate, priorityLevel, status, taskId) => {
         const sql = `
-        UPDATE tasks SET listId = $2, taskName = $3, description = $4, dueDate = $5, priorityLevel = $6, status = $7 
-        WHERE taskId = $1
+        UPDATE tasks SET listId = $1, taskName = $2, description = $3, dueDate = $4, priorityLevel = $5, status = $6 
+        WHERE taskId = $7
         RETURNING *`
         const parameters = [listId, taskName, description, dueDate, priorityLevel, status, taskId]
         return db
