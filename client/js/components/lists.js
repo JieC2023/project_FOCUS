@@ -1,34 +1,41 @@
+function renderUserLists() {
+    document.querySelector('#page').innerHTML = `
+      <section class="user-lists">
+        ${renderLists()}
+      </section>
+    `
+}
+  
+function renderLists() {
+    return state.lists.map(list => `
+    <section class="list" data-id='${list.listId}'>
+      <header>
+        <h2>${list.name}</h2>
+        <span class="material-symbols-outlined delete" onClick="deleteList(event)">delete</span>
+        <span onClick="renderUpdateList()">update</span>
+      </header>
+      <p>${list.description}</p>
+    </section>
+  `).join('')
+}
+  
+function deleteList(event) {
+    const deleteBtn = event.target
+    const listDOM = deleteBtn.closest('.list')
+    const listId = listDOM.dataset.id
+    fetch(`/api/lists/${listId}`, {
+      method: 'DELETE'
+    })
+      .then(() => {
+        state.lists = state.lists.filter(l => l.listId != listId)
+        renderUserLists()
+      })
+}
+
 function renderList() {
   document.querySelector('#page').innerHTML = `
     <section class="task-list">
       ${renderTasks()}
     </section>
   `
-}
-function renderTasks() {
-  return state.tasks.map(task => `
-  <section class="task" data-id='${task.taskId}'>
-    <header>
-      <h2>${task.taskName}</h2>
-      <span class="material-symbols-outlined delete" onClick="deleteTask(event)">delete</span>
-      <span onClick="renderUpdateTask(${task.taskId})">update</span>
-    </header>
-    <p>${task.description}</p>
-    <p>${task.priorityLevel}</p>
-  </section>
-`).join('')
-}
-
-function deleteTask(event) {
-  const deleteBtn = event.target
-  const taskDOM = deleteBtn.closest('.task')
-  const taskId = taskDOM.dataset.id
-  console.log(taskId)
-  fetch(`/api/tasks/delete/${taskId}`, {
-    method: 'DELETE'
-  })
-    .then(() => {
-      state.tasks = state.tasks.filter(t => t.task_Id != taskId)
-      renderList()
-    })
 }

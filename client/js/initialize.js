@@ -30,7 +30,7 @@ function checkUser() {
     .then(res => res.json())
     .then(res => {
       if (res.result === 'successful') {
-        state.loggedInUser = { id: res.user.user_id, name: res.user.name, email: res.user.email }
+        state.loggedInUser = { userId: res.user.userId, name: res.user.name, email: res.user.email }
           document.querySelector('.user-controls ul').innerHTML = `
               <h3>Welcome back, <span class="link" onClick="renderAccount()">${state.loggedInUser.name}</span>!</h3>
               <span class="button" onClick="logOut()">Log Out</span>
