@@ -28,12 +28,12 @@ function renderHome() {
 function checkUser() {
     fetch('/api/sessions')
     .then(res => res.json())
-    .then(data => {
-      if (data.result === 'successful') {
-          state.loggedInUser = data.user.email
+    .then(res => {
+      if (res.result === 'successful') {
+        state.loggedInUser = { name: res.user.name, email: res.user.email }
           document.querySelector('.user-controls ul').innerHTML = `
-              <h3>Welcome back, <span class="link" onClick="">${data.user.name}</span>!</h3>
-              <span class="button" onClick="">Log Out</span>
+              <h3>Welcome back, <span class="link" onClick="">${state.loggedInUser.name}</span>!</h3>
+              <span class="button" onClick="logOut()">Log Out</span>
           `
       } else {
           document.querySelector('.user-controls ul').innerHTML = `
