@@ -19,10 +19,23 @@ function renderUpdateList() {
 
 function updateList(event) {
 	event.preventDefault()
-	// const form = event.target
+	const form = event.target;
+	const data = Object.fromEntries(new FormData(form))
+	console.log(data)
+	const listDOM = form.closest('.update-list');
+	const listId = Number(listDOM.dataset.id);
+	fetch(`/api/lists/update/${listId}`, {
+	  method: 'PUT',
+	  headers: { 'Content-Type': 'application/json' },
+	  body: JSON.stringify(data)
+	})
+	  .then(res => res.json())
+	  .then(res => {
 
-	// const data = Object.fromEntries(new FormData(form))
-
-	// console.log(data)
-	// const listDOM = form
-}
+		const index = state.lists.findIndex(t => t.listId === listId);
+		console.log('woof')
+		console.log(typeof listId)
+		state.lists[index] = data;
+		renderList();
+	  });
+  }
