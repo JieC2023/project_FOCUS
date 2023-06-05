@@ -3,7 +3,7 @@ const db = require('../db/db')
 const Task = {
     create: (listId, taskName, description, dueDate, priorityLevel, status) => {
         const sql = `
-        INSERT INTO tasks(listId, taskName, description, dueDate, priorityLevel, status)
+        INSERT INTO "tasks"("listId", "taskName", "description", "dueDate", "priorityLevel", "status")
         VALUES ($1, $2, $3, $4, $5, $6)
         RETURNING *
         `
@@ -14,8 +14,8 @@ const Task = {
     },
     getByList: listId => {
         const sql = `
-        SELECT FROM tasks 
-        WHERE listId = $1`
+        SELECT FROM "tasks" 
+        WHERE "listId" = $1`
         const parameters = [listId]
         return db
             .query(sql, parameters)
@@ -23,8 +23,8 @@ const Task = {
     },
     getById: taskId => {
         const sql = `
-        SELECT FROM tasks 
-        WHERE taskId = $1`
+        SELECT FROM "tasks" 
+        WHERE "taskId" = $1`
         const parameters = [taskId]
         return db
             .query(sql, parameters)
@@ -32,8 +32,8 @@ const Task = {
     },
     updateById: (listId, taskName, description, dueDate, priorityLevel, status, taskId) => {
         const sql = `
-        UPDATE tasks SET listId = $1, taskName = $2, description = $3, dueDate = $4, priorityLevel = $5, status = $6 
-        WHERE taskId = $7
+        UPDATE "tasks" SET "listId" = $1, "taskName" = $2, "description" = $3, "dueDate" = $4, "priorityLevel" = $5, "status" = $6 
+        WHERE "taskId" = $7
         RETURNING *`
         const parameters = [listId, taskName, description, dueDate, priorityLevel, status, taskId]
         return db
@@ -42,8 +42,8 @@ const Task = {
     },
     deleteById: taskId => {
         const sql = `
-        DELETE FROM tasks 
-        WHERE taskId = $1 
+        DELETE FROM "tasks" 
+        WHERE "taskId" = $1 
         RETURNING *`
         const parameters = [taskId]
         return db

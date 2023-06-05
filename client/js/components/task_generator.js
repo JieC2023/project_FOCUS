@@ -56,24 +56,3 @@ function addFilters(event) {
     const data = Object.fromEntries(new FormData(form))
     console.log(data)
 }
-
-// document.getElementById("activity-form").addEventListener("submit", function(event) {
-//     event.preventDefault(); // Prevent form submission
-
-//     fetch("https://www.boredapi.com/api/activity") // Fetch API 
-//     .then(response => response.json())
-//     .then(data => {
-
-//         console.log(data);
-//     });
-// });
-
-
-
-// accessibility: 0.3
-// activity: "Go to an escape room"
-// key: "5585829"
-// link: ""
-// participants: 4
-// price: 0.5
-// type: "social"
