@@ -1,20 +1,20 @@
 const db = require('../db/db')
 
 const List = {
-    create: (userID, name, description) => {
+    create: (userId, name, description) => {
         const sql = `
-        INSERT INTO lists(userId, name, description)
+        INSERT INTO "lists"("userId", "name", "description")
         VALUES ($1, $2, $3)
         RETURNING *
          `
          return db
-            .query(sql, [userID, name, description])
+            .query(sql, [userId, name, description])
             .then(dbRes => dbRes.rows[0])
     },
     getByUser: () => {
         const sql = `
-        SELECT * FROM lists
-        WHERE listId = $1
+        SELECT * FROM "lists"
+        WHERE "listId" = $1
         `
         return db
             .query(sql)
@@ -24,20 +24,20 @@ const List = {
     },
     getById: listId => {
         const sql = `
-        SELECT FROM lists
-        WHERE listId = $1
+        SELECT FROM "lists"
+        WHERE "listId" = $1
         `
         const parameters = [listId]
         return db
             .query(sql, parameters)
             .then(dbRes => dbRes.rows[0])
     },
-    updateById: (listID, userId, name, description) => {
+    updateById: (listId, userId, name, description) => {
         const sql = `
-        UPDATE lists SET userId = $1, name = $2, description = $3 WHERE listId = $4
+        UPDATE "lists" SET "userId" = $1, "name" = $2, "description" = $3 WHERE "listId" = $4
         RETURNING *
         `
-        const parameters = [listID, userId, name, description]
+        const parameters = [listId, userId, name, description]
         return db
             .query(sql, parameters)
             .then(dbRes => dbRes.rows[0])
@@ -45,8 +45,8 @@ const List = {
     deleteById: listId => {
         const sql = 
         `
-        DELETE FROM lists 
-        WHERE listId = $1
+        DELETE FROM "lists" 
+        WHERE "listId" = $1
         `
         return db.query(sql, [listId])
     }
