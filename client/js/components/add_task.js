@@ -13,7 +13,7 @@ function renderAddTask() {
 				</fieldset>
 				<fieldset>
 					<label for="">Priority: </label>
-					<input type="text" name="priorityLevel">
+					<input type="number" name="priorityLevel">
 				</fieldset>
 				<button>Add Task</button>
 			</form>
