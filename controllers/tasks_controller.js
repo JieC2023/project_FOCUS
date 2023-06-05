@@ -27,7 +27,7 @@ router.get('/:taskId', (req, res) => {
 })
 
 router.put('/update/:taskId', (req, res) => {
-    const { listId, taskName, description, dueDate, priorityLevel, status }= req.body
+    const { listId, taskName, description, dueDate, priorityLevel, status } = req.body
     const taskId = req.params.taskId
     Task
         .updateById(listId, taskName, description, dueDate, priorityLevel, status, taskId)

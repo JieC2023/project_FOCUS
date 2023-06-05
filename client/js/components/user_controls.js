@@ -37,7 +37,7 @@ function logIn(event) {
         } else {
           state.loggedInUser = { id: res.user.user_id, name: res.user.name, email: res.user.email }
           checkUser()
-          renderHome()
+          renderAccount()
         }
     })
 }

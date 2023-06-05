@@ -34,6 +34,6 @@ function signUp(event) {
     body: JSON.stringify(data)
   })
     .then(res => res.json())
-    .then(email => state.loggedInUser = email)
-    .then(() => renderList())
+    // come back to this to sign in automatically on sign up
+    .then(user => renderLogin())
 }

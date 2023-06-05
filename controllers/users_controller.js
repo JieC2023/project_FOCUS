@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
 
     User
       .create(name, email, passwordDigest)
-      .then(email => res.json(email))
+      .then(user => res.json(user))
 })
 
 module.exports = router
