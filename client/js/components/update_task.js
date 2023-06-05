@@ -24,10 +24,11 @@ function renderUpdateTask(taskId) {
 function updateTask(event) {
 	event.preventDefault()
 	const form = event.target;
-	const data = Object.fromEntries(new FormData(form))
-	console.log(data)
 	const taskDOM = form.closest('.update-task');
 	const taskId = Number(taskDOM.dataset.id);
+	const data = { taskId: taskId, ...Object.fromEntries(new FormData(form))}
+	data.priorityLevel = Number(data.priorityLevel)
+	console.log(data)
 	fetch(`/api/tasks/update/${taskId}`, {
 	  method: 'PUT',
 	  headers: { 'Content-Type': 'application/json' },

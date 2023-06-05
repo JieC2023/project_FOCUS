@@ -26,8 +26,7 @@ function createTask(event) {
 	const form = event.target
 
 	const data = Object.fromEntries(new FormData(form))
-
-	console.log(data)
+	data.priorityLevel = Number(data.priorityLevel)
 
 	fetch('/api/tasks', {
 		method: 'POST',
