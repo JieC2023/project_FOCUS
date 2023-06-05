@@ -9,31 +9,30 @@ function getActivity(event, queryString = ``) {
         })
 }
 
+function renderLink(link) {
+    if (link) {
+        return `<span>Link: <a href="${link}">${link}</a></span>`
+    }
+    return ''
+}
+
+function addRandomToList(taskData) {
+    console.log(taskData)
+}
+
 function renderActivity(data) {
     const pageContent = document.querySelector('#page')
     const activityCore = ` 
-        <h2>Activity</h2> 
-        <span>Activity: ${data.activity}</span><br>
-        <span>Accessibility: ${data.accessibility}</span><br>
-        <span>Participants: ${data.participants}</span><br>
-        <span>Price: ${data.price}</span><br>
+        <h2>Here's an idea!</h2>
+        <span>${data.activity}</span>
+        <span>Accessibility: ${data.accessibility}</span>
+        <span>Participants: ${data.participants}</span>
+        <span>Price: ${data.price}</span>
     `
-    const linkText = 
-    document.querySelector('.page-CSS').innerHTML = `
-
-    `
-    if (data.link) {
-        pageContent.innerHTML = `
+    pageContent.innerHTML = `
         <section class="activity">
             ${activityCore}
-            <span>Link: ${data.link}</span>
+            ${renderLink(data.link)}
         </section>
-        `
-    } else {
-        pageContent.innerHTML = `
-        <section class="activity">
-            ${activityCore}
-        </section>
-        `
-    }
+    `
 }
