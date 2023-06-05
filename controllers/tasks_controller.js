@@ -6,38 +6,38 @@ const Task = require('../models/task')
 
 // routes to go here
 router.post('/', (req, res) => {
-    const { listID, taskName, description, dueDate, priorityLevel, status }= req.body
+    const { listId, taskName, description, dueDate, priorityLevel, status }= req.body
     Task
-        .create(listID, taskName, description, dueDate, priorityLevel, status)
+        .create(listId, taskName, description, dueDate, priorityLevel, status)
         .then(task => res.json(task))
 })
 
-router.get('/:listID', (req, res) => {
-    const listID = req.params.listID
+router.get('/:listId', (req, res) => {
+    const listId = req.params.listId
     Task
-        .getByList(listID)
+        .getByList(listId)
         .then(tasks => res.json(tasks))
 })
 
-router.get('/:taskID', (req, res) => {
-    const taskID = req.params.taskID
+router.get('/:taskId', (req, res) => {
+    const taskId = req.params.taskId
     Task
-        .getByID(taskID)
+        .getById(taskId)
         .then(task => res.json(task))
 })
 
-router.put('/update/:taskID', (req, res) => {
-    const { listID, taskName, description, dueDate, priorityLevel, status }= req.body
-    const taskID = req.params.taskID
+router.put('/update/:taskId', (req, res) => {
+    const { listId, taskName, description, dueDate, priorityLevel, status }= req.body
+    const taskId = req.params.taskId
     Task
-        .updateByID(listID, taskName, description, dueDate, priorityLevel, status, taskID)
-        .then(task => res.json({message: `task ${task.task_id} has been updated!`}))
+        .updateById(listId, taskName, description, dueDate, priorityLevel, status, taskId)
+        .then(task => res.json({message: `task ${task.taskId} has been updated!`}))
 })
 
-router.delete('/delete/:taskID', (req, res) => {
-    const taskID = req.params.taskID
+router.delete('/delete/:taskId', (req, res) => {
+    const taskId = req.params.taskId
     Task
-        .deleteByID(taskID)
+        .deleteById(taskId)
         .then(() => res.json({message: 'your task has been deleted!'}))
 })
 
