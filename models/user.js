@@ -4,7 +4,7 @@ const User = {
   findById: id => {
     const sql = `
       SELECT * FROM users
-      WHERE user_id = $1
+      WHERE userId = $1
     `
 
     return db
@@ -26,7 +26,7 @@ const User = {
   ////////Creating the name, email and password for the database
   create: (name, email, passwordDigest) => {
     const sql = `
-      INSERT INTO users(name, email, password_digest) 
+      INSERT INTO users(name, email, passwordDigest) 
       VALUES ($1, $2, $3)
       RETURNING *
     `
@@ -38,15 +38,5 @@ const User = {
     }
 }
 
-module.exports = User
-
-
-// This is connecting to this database below 
-
-// CREATE TABLE users(
-//     user_id SERIAL PRIMARY KEY,
-//     name TEXT,
-//     email TEXT,
-//     password_digest TEXT
-//   );
+module.exports = User  
   

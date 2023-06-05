@@ -16,11 +16,11 @@ router.post('/', (req, res) => {
             res.status(400).json({ result: 'failed', error: 'email and/or password are invalid' })
         } else { 
             // using bcrypt to validate the password:
-            const isValidPassword = bcrypt.compareSync(password, user.password_digest)
+            const isValidPassword = bcrypt.compareSync(password, user.passwordDigest)
 
             if (user && isValidPassword) { 
                 //log the user in
-                req.session.userId = user.user_id
+                req.session.userId = user.userId
                 res.json({ result: 'successful', user: user })
             }
         }
