@@ -1,26 +1,32 @@
+-- To create database:
 CREATE DATABASE adhd_db;
 \c adhd_db
 
+-- To reset tables run this command:
+DROP TABLE users, lists, tasks;
+-- Then create as below.
+
+-- To create tables, just run this:
 CREATE TABLE users(
-    user_id SERIAL PRIMARY KEY,
+    userId SERIAL PRIMARY KEY,
     name TEXT,
     email TEXT,
-    password_digest TEXT
+    passwordDigest TEXT
 );
 
 CREATE TABLE lists(
-    list_id SERIAL PRIMARY KEY,
-    user_id INT,
+    listId SERIAL PRIMARY KEY,
+    userId INT,
     name TEXT,
     description TEXT
 );
 
 CREATE TABLE tasks(
-    task_id SERIAL PRIMARY KEY,
-	list_id INT,
-    task_name TEXT,
+    taskId SERIAL PRIMARY KEY,
+    listId INT,
+    taskName TEXT,
     description TEXT,
-	due_date DATE,
-	priority_level INTEGER,
-	status text
+    dueDate DATE,
+    priorityLevel INTEGER,
+    status text
 );

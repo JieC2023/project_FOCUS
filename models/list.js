@@ -3,7 +3,7 @@ const db = require('../db/db')
 const List = {
     create: (userID, name, description) => {
         const sql = `
-        INSERT INTO lists(user_id, name, description)
+        INSERT INTO lists(userId, name, description)
         VALUES ($1, $2, $3)
         RETURNING *
          `
@@ -14,7 +14,7 @@ const List = {
     getByUser: () => {
         const sql = `
         SELECT * FROM lists
-        WHERE list_id = $1
+        WHERE listId = $1
         `
         return db
             .query(sql)
@@ -22,33 +22,33 @@ const List = {
                 return dbRes.rows
             })
     },
-    getByID: list_id => {
+    getById: listId => {
         const sql = `
         SELECT FROM lists
-        WHERE list_id = $1
+        WHERE listId = $1
         `
-        const parameters = [list_id]
+        const parameters = [listId]
         return db
             .query(sql, parameters)
             .then(dbRes => dbRes.rows[0])
     },
-    updateByID: (listID, user_id, name, description) => {
+    updateById: (listID, userId, name, description) => {
         const sql = `
-        UPDATE lists SET user_id = $1, name = $2, description = $3 WHERE list_id = $4
+        UPDATE lists SET userId = $1, name = $2, description = $3 WHERE listId = $4
         RETURNING *
         `
-        const parameters = [listID, user_id, name, description]
+        const parameters = [listID, userId, name, description]
         return db
             .query(sql, parameters)
             .then(dbRes => dbRes.rows[0])
     },
-    deleteByID: listID => {
+    deleteById: listId => {
         const sql = 
         `
         DELETE FROM lists 
-        WHERE list_id = $1
+        WHERE listId = $1
         `
-        return db.query(sql, [listID])
+        return db.query(sql, [listId])
     }
 }
 module.exports = List

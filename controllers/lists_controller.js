@@ -13,32 +13,32 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    const { userID, name, description } = req.body
+    const { userId, name, description } = req.body
 
     List
-        .create(userID, name, description)
+        .create(userId, name, description)
         .then(list => res.json(list))
 })
 
 router.put('/update/:id', (req, res) => {
-    const { user_id, name, description }= req.body
-    const listID = req.params.listID
+    const { userId, name, description }= req.body
+    const listId = req.params.listId
     List
-        .updateByID(user_id, name, description, listID)
-        .then(list => res.json({message: `list ${list.list_id} has been updated!`}))
+        .updateById(userId, name, description, listId)
+        .then(list => res.json({message: `list ${list.listId} has been updated!`}))
 })
 
 router.get('/:id', (req, res) => {
-    const listID = req.params.listID
+    const listId = req.params.listId
     List
-        .getByID(listID)
+        .getById(listId)
         .then(list => res.json(list))
 })
 router.delete('/:id', (req, res) => {
-    const listID = req.params.id
+    const listId = req.params.id
 
     List
-        .deleteByID(listID)
+        .deleteById(listId)
         .then(() => res.json({message: 'deleted successfully'}))
 })
 

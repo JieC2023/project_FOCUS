@@ -5,14 +5,13 @@ function renderList() {
     </section>
   `
 }
-
 function renderTasks() {
   return state.tasks.map(task => `
   <section class="task" data-id='${task.task_id}'>
     <header>
       <h2>${task.task_name}</h2>
       <span class="material-symbols-outlined delete" onClick="deleteTask(event)">delete</span>
-      <span onClick="updateTask(event)">update</span>
+      <span onClick="renderUpdateTask(${task.task_id})">update</span>
     </header>
     <p>${task.description}</p>
     <p>${task.priority_level}</p>

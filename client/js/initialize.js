@@ -17,7 +17,7 @@ function renderHome() {
         <ul class="temporary">
             <li>Tasks:</li>
             <li class="link" onClick="renderAddTask()">Add Task</li>
-            <li class="link" onClick="renderTasks()">Show Tasks</li>
+            <li class="link" onClick="renderList()">Show Tasks</li>
             <li>Lists:</li>
             <li class="link" onClick="renderAddList()">New List</li>
             <li class="link" onClick="renderUserLists()">Show Lists</li>
