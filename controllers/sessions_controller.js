@@ -47,6 +47,7 @@ router.delete('/', (req, res) => {
                 res.status(400).json({ result: 'failed', error: 'Unable to log out' })
             } else {
                 // return message if successful
+                res.clearCookie('user_sid')
                 res.json({ result: 'successful', message: 'Logged out successfully!'})
             }
         })
