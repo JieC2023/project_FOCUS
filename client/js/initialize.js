@@ -33,7 +33,7 @@ function checkUser() {
           state.loggedInUser = data.user.email
           document.querySelector('.user-controls ul').innerHTML = `
               <h3>Welcome back, <span class="link" onClick="">${data.user.name}</span>!</h3>
-              <span class="button" onClick="">Log Out</span>
+              <span class="button" onClick="logOut()">Log Out</span>
           `
       } else {
           document.querySelector('.user-controls ul').innerHTML = `
