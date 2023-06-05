@@ -1,9 +1,7 @@
-function renderUpdateTask() {
-
-
+function renderUpdateTask(task_id) {
 	document.querySelector('#page').innerHTML = `
-	<section class='update-task'>
-    <form action="" onSubmit="updateTask(event, ${task_Id})">
+	<section class='update-task' data-id='${task_id}'>
+    <form action="" onSubmit="updateTask(event)">
         <h2>Update Task</h2>
         <fieldset>
             <label for="">Task: </label>
@@ -24,25 +22,24 @@ function renderUpdateTask() {
 }
 
 function updateTask(event) {
-	const updateBtn = event.target;
-	const taskDOM = updateBtn.closest('.task');
-	const taskId = taskDOM.dataset.id;
-	console.log(taskId)
-	const updatedData = {
-	  taskName: 'Updated Task Name',
-	  description: 'Updated Description',
-	  priorityLevel: 'Updated Priority Level'
-	};
+	event.preventDefault()
+	const form = event.target;
+	const data = Object.fromEntries(new FormData(form))
+	console.log(data)
+	const taskDOM = form.closest('.update-task');
+	const taskId = Number(taskDOM.dataset.id);
 	fetch(`/api/tasks/update/${taskId}`, {
 	  method: 'PUT',
 	  headers: { 'Content-Type': 'application/json' },
-	  body: JSON.stringify(updatedData)
+	  body: JSON.stringify(data)
 	})
 	  .then(res => res.json())
-	  .then(updatedTask => {
+	  .then(res => {
 
 		const index = state.tasks.findIndex(t => t.task_id === taskId);
-		state.tasks[index] = updatedTask;
+		console.log('woof')
+		console.log(typeof taskId)
+		state.tasks[index] = data;
 		renderList();
 	  });
   }
