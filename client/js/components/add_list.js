@@ -25,14 +25,19 @@ function createList(event) {
 
 	console.log(data)
 
-	fetch('/api/lists', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify(data)
-	})
-		.then(res => res.json())
-		.then(list => {
-			state.lists.push(list)
-			renderUserLists()
-		})
+    if (state.loggedInUser) {
+        data = { userId: state.loggedInUser.userId, ...data }
+        fetch('/api/lists', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(list => {
+                state.lists.push(list)
+                renderUserLists()
+            })
+    } else {
+        state.lists.push(data)
+    }
 }

@@ -1,3 +1,48 @@
-.types {
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.activity {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    font-size: 1.5em;
+    text-align: center;
+}
+.type-controls {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.types-label {
+    grid-column: 1 / span 3;
+    text-align: center;
+    padding-bottom: 2vh;
+    font-size: 1.2em;
+}
+.type {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+}
+form .button {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 1em;
+    padding: 0.2em 1em;
+}
+fieldset {
+    border: none;
+    padding: 0.1em;
+    width: fit-content;
+    margin: 0 auto;
+}
+.type-controls, .slider-controls {
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: 0.4em;
+    background-color: #E6C593;
+}
+input[type="range"] {
+    background-color: black;
 }

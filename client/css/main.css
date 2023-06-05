@@ -17,20 +17,22 @@ body {
     font-family: 'Rubik', sans-serif;
     background-color: white;
 }
-header {
+.page-header {
     /* fixes header to top of page (even when scrolling) */
     position: sticky;
     top: 0;
     /* set header size (width of screen) */
+    height: 10vh;
     width: 100%;
     /* ensure header displays over other content when overlapping and add background color (inherited from body) as it's transparent by default */
     z-index: 1;
     background-color: #F0DEA3;
     /* basic padding */
-    padding: 1.5vh 2vw 0.75vh 2vw;
+    padding: 3vh 2vw 2vh 2vw;
     /* set as a flex display and arrange contained content */
     display: flex;
     justify-content: space-around;
+    align-items: center;
     /* add bottom border and some shadow so that it looks like it's above the main content */
     border-bottom: 1px solid grey;
     box-shadow: 0 1px 5px grey;
@@ -52,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 #page {
     background-color: #FAF4F1;
     width: 100vw;
-    height: 85vh;
+    height: 84.5vh;
     margin: 0;
     padding: 2vh 5vw;
     display: flex;
@@ -61,14 +63,15 @@ h1, h2, h3, h4, h5, h6 {
     overflow-y: auto;
     gap: 1em;
 }
-footer {
+.page-footer {
     /*  above, so below */
     position: absolute;
     bottom: 0;
+    height: 6vh;
     width: 100%;
     z-index: 1;
     background-color: #F0DEA3;
-    padding: 1.3vh 0;
+    padding: 1.3vh 0 2vh 0;
     border-top: 1px solid grey;
     box-shadow: 0 -1px 5px grey;
 }
@@ -94,6 +97,7 @@ li {
     border-radius: 0.45em;
     background-color: #FAF4F1;
     box-shadow: 0 0 2px grey;
+    font-family: 'Rubik', sans-serif;
 }
 .button:hover {
     background-color: white;
