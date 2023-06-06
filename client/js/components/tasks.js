@@ -21,7 +21,7 @@ function renderTasks() {
       method: 'DELETE'
     })
       .then(() => {
-        state.tasks = state.tasks.filter(t => t.task_Id != taskId)
+        state.tasks = state.tasks.filter(t => t.taskId != taskId)
         renderList()
       })
 }
