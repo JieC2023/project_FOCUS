@@ -12,7 +12,7 @@ function renderLists() {
       <header>
         <h2>${list.name}</h2>
         <span class="material-symbols-outlined delete" onClick="deleteList(event)">delete</span>
-        <span onClick="renderUpdateList()">update</span>
+        <span onClick="renderUpdateList(${list.listId})">update</span>
       </header>
       <p>${list.description}</p>
     </section>

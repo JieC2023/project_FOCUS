@@ -13,7 +13,7 @@ function renderAddTask() {
 				</fieldset>
 				<fieldset>
 					<label for="">Priority: </label>
-					<input type="number" name="priorityLevel">
+					<input type="text" name="priorityLevel">
 				</fieldset>
 				<button>Add Task</button>
 			</form>
@@ -26,7 +26,8 @@ function createTask(event) {
 	const form = event.target
 
 	const data = Object.fromEntries(new FormData(form))
-	data.priorityLevel = Number(data.priorityLevel)
+
+	console.log(data)
 
 	fetch('/api/tasks', {
 		method: 'POST',
