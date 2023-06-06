@@ -1,4 +1,5 @@
 const state = {
+  guestUser: true,
   tasks: [],
   lists: [],
   activityTypes: ['Busywork', 'Charity', 'Cooking', 'DIY', 'Education', 'Music', 'Recreational', 'Relaxation', 'Social']
@@ -31,6 +32,7 @@ function checkUser() {
     .then(res => {
       if (res.result === 'successful') {
         state.loggedInUser = { userId: res.user.userId, name: res.user.name, email: res.user.email }
+        state.guestUser = false
           document.querySelector('.user-controls ul').innerHTML = `
               <h3>Welcome back, <span class="link" onClick="renderAccount()">${state.loggedInUser.name}</span>!</h3>
               <span class="button" onClick="logOut()">Log Out</span>

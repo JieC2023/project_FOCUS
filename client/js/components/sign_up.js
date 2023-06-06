@@ -27,7 +27,7 @@ function signUp(event) {
 
   // converts form data into an object
   const data = Object.fromEntries(new FormData(form))
-
+  
   fetch('/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

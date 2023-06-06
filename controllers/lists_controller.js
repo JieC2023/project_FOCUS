@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
         .then(list => res.json(list))
 })
 
-router.put('/update/:id', (req, res) => {
+router.put('/update/:listId', (req, res) => {
     const { userId, name, description }= req.body
     const listId = req.params.listId
     List

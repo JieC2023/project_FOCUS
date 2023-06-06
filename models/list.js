@@ -32,12 +32,12 @@ const List = {
             .query(sql, parameters)
             .then(dbRes => dbRes.rows[0])
     },
-    updateById: (listId, userId, name, description) => {
+    updateById: (userId, name, description, listId) => {
         const sql = `
         UPDATE "lists" SET "userId" = $1, "name" = $2, "description" = $3 WHERE "listId" = $4
         RETURNING *
         `
-        const parameters = [listId, userId, name, description]
+        const parameters = [userId, name, description, listId]
         return db
             .query(sql, parameters)
             .then(dbRes => dbRes.rows[0])

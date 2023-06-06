@@ -52,6 +52,7 @@ function logOut() {
             renderError(res.error)
         } else {
             delete state.loggedInUser
+            state.guestUser = true
             checkUser()
             renderHome()
         }

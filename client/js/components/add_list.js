@@ -9,7 +9,7 @@ function renderAddList() {
 				</fieldset>
 				<fieldset>
 					<label for="">Description: </label>
-					<textarea name="description" id="" cols="30" rows="10"></textarea>
+					<input type="text"name="description">
 				</fieldset>
 				<button>Add List</button>
 			</form>
@@ -18,8 +18,8 @@ function renderAddList() {
 }
 
 function createList(event) {
-	event.preventDefault()
-	const form = event.target
+	event.preventDefault();
+	const form = event.target;
 
 	const data = Object.fromEntries(new FormData(form))
 
