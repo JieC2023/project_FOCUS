@@ -40,6 +40,9 @@
       <!-- task generator (Bored API) scripts -->
     <script defer src="/js/components/task_generator.js"></script>
     <script defer src="/js/components/bored_interface.js"></script>
+    <script defer src="./js/components/pixel_art.js"></script>
+    <script defer src="./js/components/advice_API.js"></script>
+    <script defer src="./js/components/useless_API.js"></script>
 </head>
 <body>
       <!-- section to load in individual page CSS (loading home CSS on site entry) -->
@@ -67,6 +70,12 @@
         </h2>
       <!-- temporary list for links while we set up page flow -->
         <ul class="temporary">
+            <li>Pixel Art!!!</li>
+            <li class="link" onClick="renderPixelArt()">Do some drawing!</li>
+            <li>Useless Fact API</li>
+            <li class="link" onClick="renderUselessFact()">Useless Fact!</li>
+            <li>Advice API</li>
+            <li class="link" onClick="renderAdvice()">Advice!</li>
             <li>Tasks:</li>
             <li class="link" onClick="renderAddTask()">Add Task</li>
             <li class="link" onClick="renderList()">Show Tasks</li>
