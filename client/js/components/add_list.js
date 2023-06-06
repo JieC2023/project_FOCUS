@@ -18,26 +18,28 @@ function renderAddList() {
 }
 
 function createList(event) {
-	event.preventDefault();
-	const form = event.target;
+    event.preventDefault();
+    const form = event.target;
 
-	const data = Object.fromEntries(new FormData(form))
+    let data = Object.fromEntries(new FormData(form));
 
-	console.log(data)
+    console.log(data);
 
-    if (state.loggedInUser) {
-        data = { userId: state.loggedInUser.userId, ...data }
+    if (state.guestUser === true) {
+        state.lists.push(data); // Assuming you want to push the form data to the lists array
+        renderSaveList();
+    } else {
+        data.userId = state.loggedInUser.userId;
+
         fetch('/api/lists', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         })
-            .then(res => res.json())
-            .then(list => {
-                state.lists.push(list)
-                renderUserLists()
-            })
-    } else {
-        state.lists.push(data)
+        .then(res => res.json())
+        .then(list => {
+            state.lists.push(list);
+            renderAccount();
+        });
     }
 }
