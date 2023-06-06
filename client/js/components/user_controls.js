@@ -37,6 +37,32 @@ function logIn(event) {
         } else {
           state.loggedInUser = { userId: res.user.userId, name: res.user.name, email: res.user.email }
           delete state.guestUser
+          state.lists.forEach(list => {
+            list.userId = res.user.userId
+            fetch('/api/lists', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(list => {
+                state.lists.push(list);
+                state.tasks.forEach(task => {
+                    task.listId = list.listId
+                    fetch('/api/tasks', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(task)
+                    })
+                    .then(res => res.json())
+                    .then(task => {
+                        state.tasks.push(task);
+                        renderAccount();
+                    });
+                })
+                renderAccount();
+            });
+          })
           checkUser()
           renderAccount()
         }
