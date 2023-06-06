@@ -86,6 +86,9 @@ ul {
 li {
     display: inline;
 }
+link {
+    text-decoration: none;
+}
 .link:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -98,6 +101,7 @@ li {
     background-color: #FAF4F1;
     box-shadow: 0 0 2px grey;
     font-family: 'Rubik', sans-serif;
+    transition: box-shadow 0.2s, background-color 0.2s;
 }
 .button:hover {
     background-color: white;
