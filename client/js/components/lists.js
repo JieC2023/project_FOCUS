@@ -15,7 +15,7 @@ function renderLists() {
             `
         } else {
             sectionOpener = `
-                <section class="list" data-id="${state.lists.listId}">
+                <section class="list" data-id="${list.listId}">
             `
         }
         return `${sectionOpener}

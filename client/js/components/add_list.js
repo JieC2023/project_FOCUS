@@ -32,6 +32,7 @@ function createList(event) {
 
     if (state.guestUser === true) {
         data.userId = 0 // Set list userId as a guest user
+        state.lists.push(data)
         renderSaveList();
     } else {
         data.userId = state.loggedInUser.userId;
