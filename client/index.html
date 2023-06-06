@@ -63,26 +63,23 @@
 
       <!-- section to load page content into (loading home content on entry) -->
     <section id="page" class="content">
-        <h1 class="link" onClick="renderAddTask()">Get Started!</h1>
-        <h2 class="link" onClick="renderTaskGenerator()">
+        <h2 class="link" onClick="renderAddTask()">Get Started!</h2>
+        <h3 class="link" onClick="renderTaskGenerator()">
             I'm bored... <br>
             Any suggestions?
-        </h2>
-      <!-- temporary list for links while we set up page flow -->
-        <ul class="temporary">
-            <li>Pixel Art!!!</li>
-            <li class="link" onClick="renderPixelArt()">Do some drawing!</li>
-            <li>Useless Fact API</li>
-            <li class="link" onClick="renderUselessFact()">Useless Fact!</li>
-            <li>Advice API</li>
-            <li class="link" onClick="renderAdvice()">Advice!</li>
-            <li>Tasks:</li>
-            <li class="link" onClick="renderAddTask()">Add Task</li>
-            <li class="link" onClick="renderList()">Show Tasks</li>
-            <li>Lists:</li>
-            <li class="link" onClick="renderAddList()">New List</li>
-            <li class="link" onClick="renderUserLists()">Show Lists</li>
-        </ul>
+        </h3>
+        <section class="lists">
+            <ul class="home-ul">
+                <li class="link" onClick="renderList()">Show Tasks</li>
+                <li class="link" onClick="renderUserLists()">Show Lists</li>
+            </ul>
+            <h3 class="stuff-heading" for="">STUFF!!</h3>
+            <ul class="home-ul">
+                <li class="link" onClick="renderPixelArt()">Feeling artsy?</li>
+                <li class="link" onClick="renderUselessFact()">Useless Facts!</li>
+                <li class="link" onClick="renderAdvice()">Ask for advice.</li>
+            </ul>
+        </section>
     </section>
 
       <!-- footer section for a few links to longer pages (about, how to use, etc.) -->

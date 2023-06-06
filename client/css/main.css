@@ -107,8 +107,15 @@ link {
     background-color: white;
     box-shadow: 0 0 4px grey;
 }
-.temporary {
-    flex-direction: column;
+.home-ul {
+    flex-direction: row;
+    align-items: center;
+    padding: 1vh 0;
+}
+.stuff-heading {
+    text-align: center;
+    padding-top: 1vh;
+    border-top: 2px solid black;
 }
 @media only screen and (min-width: 430px) {
     body {

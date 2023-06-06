@@ -6,9 +6,10 @@ const List = require('../models/list')
 
 //routes
 
-router.get('/', (req, res) => {
+router.get('/:userId', (req, res) => {
+    const userId = req.params.userId
     List
-        .getByUser()
+        .getByUser(userId)
         .then(lists => res.json(lists))
 })
 

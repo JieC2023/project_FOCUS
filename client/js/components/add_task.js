@@ -2,7 +2,7 @@ function renderAddTask() {
 	document.querySelector('#page').innerHTML = `
 		<section class='create-task'>
 			<form action="" onSubmit="createTask(event)">
-				<h2>Add Task</h2>
+				<h2>Let's get a task down.</h2>
 				<fieldset>
 					<label for="">Task: </label>
 					<input type="text" name="taskName">
@@ -15,10 +15,24 @@ function renderAddTask() {
 					<label for="">Priority: </label>
 					<input type="text" name="priorityLevel">
 				</fieldset>
-				<button>Add Task</button>
+                ${renderListSelect()}
+				<button class="button">Add Task</button>
 			</form>
 		</section>
 	`
+}
+
+function renderListSelect() {
+    if (state.loggedInUser && state.lists.length > 0) {
+        return `
+            <select name="listId" id="user-lists">
+            ${state.lists.map(list => `
+                <option value="${list.listId}">${list.name}</option>
+            `)}
+            </select>
+        `
+    }
+    return `<input type="hidden" name="listId" value="0">`
 }
 
 function createTask(event) {
@@ -29,14 +43,20 @@ function createTask(event) {
 
 	console.log(data)
 
-	fetch('/api/tasks', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify(data)
-	})
-		.then(res => res.json())
-		.then(task => {
-			state.tasks.push(task)
-			renderList()
-		})
+	if (state.guestUser === true || !state.lists[0]) {
+        data.listId = 0 // Set list userId as a guest user
+        state.tasks.push(data)
+        renderAddList();
+    } else {
+        fetch('/api/lists', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(task => {
+            state.tasks.push(task);
+            renderAccount();
+        });
+    }
 }
