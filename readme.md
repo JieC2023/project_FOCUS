@@ -21,7 +21,8 @@ $node app.js
 - Animations
 - Anything else I'd be proud to show my parents
 ## :wrench: Bugs to fix :space_invader:
-- Jot any development bugs here, can also use this as a checklist to come back to and explain if/how I overcame those bugs
+- Update/delete task & list crashes server if not signed in
+- Task generator throws undefined if no tasks exist in the external API with the given parameters
 ## :bulb: Lessons learnt
 Things I learnt during development:
 - Use this to mark down any interesting things I find as I go

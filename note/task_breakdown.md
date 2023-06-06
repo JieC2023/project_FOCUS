@@ -43,29 +43,26 @@ Base Code:
 # AFTER BASE COMPLETE
 Functionality by priority:
  - To-Do List & Task Management
-   - ~~Task CRUD (Adam & Jie)~~ - Just needs update (Adam)
-   - List CRUD (Jie)
-   - HTML for the process
+   - ~~Task CRUD (Adam & Jie)~~
+   - ~~List CRUD (Jie)~~
+   - ~~HTML for the process~~
      - ~~Step 1: One task~~
-     - Step 2: "Well done! Let's make two more."
-     - Step 3: "Nice! Let's make a list to store these."
-     - Step 4: "You have your first list! To store it so you can come back to it later, please create an account."
+     - ~~Step 2: "Nice! Let's make a list to store these."~~
+     - ~~Step 3: "You have your first list! To store it so you can come back to it later, please create an account."~~
  - ~~User Accounts~~
    - ~~user CRUD~~
    - ~~sessions~~
-   - Account Menu (Show Lists)
-   - Guest experience (what can a user create/view without logging in?)
- - RTG (Random Task Generator)
+   - ~~Account Menu (Show Lists)~~
+ - ~~RTG (Random Task Generator)~~
    - ~~Surprise Me (Random Task)~~
    - ~~Filters (Kai)~~
-     - Filtered request (Kai)
-   - Add generated task to list (if user logged in)
-   - ~~HTML &~~ CSS for menu
+     - ~~Filtered request (Kai)~~
+   - ~~HTML & CSS for menu~~
  - RSG (Random Stuff) *Ideal, but drop if we have time issues
-   - 
+   - https://uselessfacts.jsph.pl (Adrian)
+     - https://uselessfacts.jsph.pl/api/v2/facts/random
+   - https://api.adviceslip.com (Jie)
+     - https://api.adviceslip.com/advice
  - RJG (Random Jokes) *BONUS
-   - 
- - Reminders Table *BONUS
-   - 
- - Pixel Art Tool (ala Wk08 Checkpoint) *BONUS
-   - 
+   - https://icanhazdadjoke.com/api
+ - Pixel Art Tool (ala Wk08 Checkpoint) *BONUS (Adam)
