@@ -20,7 +20,7 @@ function renderLists() {
         }
         return `${sectionOpener}
             <header>
-                <h2>${list.name}</h2>
+                <h2 class="link" onClick="renderListTasks(${list.listId})">${list.name}</h2>
                 <span class="material-symbols-outlined delete" onClick="deleteList(event)">delete</span>
                 <span onClick="renderUpdateList(${list.listId})">update</span>
             </header>
