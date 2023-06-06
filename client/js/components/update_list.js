@@ -21,22 +21,25 @@ function updateList(event) {
 	event.preventDefault()
 	const form = event.target;
     const listDOM = form.closest('.update-list');
-	const listId = Number(listDOM.dataset.id);
-	const data = { listId: listId, ...Object.fromEntries(new FormData(form))}
-	console.log(data)
-	fetch(`/api/lists/update/${listId}`, {
-	  method: 'PUT',
-	  headers: { 'Content-Type': 'application/json' },
-	  body: JSON.stringify(data)
-	})
-      .then(res => res.json())
-      .then(res => {
-
-        const index = state.lists.findIndex(l => l.listId === listId);
-        console.log(state)
-        console.log(index)
-        console.log(typeof listId)
-        state.lists[index] = data;
-        renderUserLists();
-      })
+	const listId = listDOM.dataset.id;
+	const data = Object.fromEntries(new FormData(form))
+    if (data.userId === 0) {
+        
+    } else {
+        fetch(`/api/lists/update/${listId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        })
+          .then(res => res.json())
+          .then(res => {
+    
+            const index = state.lists.findIndex(l => l.listId === listId);
+            console.log(state)
+            console.log(index)
+            console.log(typeof listId)
+            state.lists[index] = data;
+            renderUserLists();
+          })
+    }
 }

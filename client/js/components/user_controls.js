@@ -36,10 +36,11 @@ function logIn(event) {
           renderError(res.error)
         } else {
           state.loggedInUser = { userId: res.user.userId, name: res.user.name, email: res.user.email }
+          delete state.guestUser
           checkUser()
           renderAccount()
         }
-    })
+      })
 }
   
 function logOut() {

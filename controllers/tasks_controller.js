@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
         .then(task => res.json(task))
 })
 
-router.get('/:listId', (req, res) => {
+router.get('/list/:listId', (req, res) => {
     const listId = req.params.listId
     Task
         .getByList(listId)

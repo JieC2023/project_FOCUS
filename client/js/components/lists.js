@@ -7,16 +7,26 @@ function renderUserLists() {
 }
   
 function renderLists() {
-    return state.lists.map(list => `
-    <section class="list" data-id='${list.listId}'>
-      <header>
-        <h2>${list.name}</h2>
-        <span class="material-symbols-outlined delete" onClick="deleteList(event)">delete</span>
-        <span onClick="renderUpdateList(${list.listId})">update</span>
-      </header>
-      <p>${list.description}</p>
-    </section>
-  `).join('')
+    let sectionOpener
+    return state.lists.map(list => {
+        if (state.guestUser) {
+            sectionOpener = `
+                <section class="list" data-id="${state.lists.indexOf(list)}">
+            `
+        } else {
+            sectionOpener = `
+                <section class="list" data-id="${state.lists.listId}">
+            `
+        }
+        return `${sectionOpener}
+            <header>
+                <h2>${list.name}</h2>
+                <span class="material-symbols-outlined delete" onClick="deleteList(event)">delete</span>
+                <span onClick="renderUpdateList(${list.listId})">update</span>
+            </header>
+            <p>${list.description}</p>
+        </section>
+    `}).join('')
 }
   
 function deleteList(event) {

@@ -11,13 +11,13 @@ const List = {
             .query(sql, [userId, name, description])
             .then(dbRes => dbRes.rows[0])
     },
-    getByUser: () => {
+    getByUser: userId => {
         const sql = `
         SELECT * FROM "lists"
-        WHERE "listId" = $1
+        WHERE "userId" = $1
         `
         return db
-            .query(sql)
+            .query(sql, [userId])
             .then(dbRes => {
                 return dbRes.rows
             })
