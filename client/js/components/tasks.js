@@ -1,6 +1,6 @@
-function renderTasks() {
-    let sectionOpener
-    return state.tasks.map(task => `
+function renderListTasks(listId) {
+    const listTasks = state.tasks.filter(task => listId === listId)
+    return listTasks.map(task => `
         <section class="task" data-id='${task.taskId}'>
             <header>
                 <h2>${task.taskName}</h2>
