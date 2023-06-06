@@ -1,4 +1,4 @@
-function getActivity(event, queryString = `?key=8264223`) {
+function getActivity(event, queryString = ``) {
     fetch(`https://www.boredapi.com/api/activity${queryString}`)
     
         .then(response => response.json())
@@ -11,7 +11,7 @@ function getActivity(event, queryString = `?key=8264223`) {
 
 function renderLink(link) {
     if (link) {
-        return `<span class="link">Link: <a href="${link}">${link}</a></span>`
+        return `<span>Link: <a href="${link}">${link}</a></span>`
     }
     return ''
 }
