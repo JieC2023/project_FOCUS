@@ -1,6 +1,6 @@
 # Project Name
 A brief description of my project.
-## :computer: [Click here](https://media.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif) to see my live project!
+## :computer: [Click here](https://project-focus.onrender.com) to see my live project!
 ## :page_facing_up: About
 - How to use my project.
 - Download instructions (if relevant):
