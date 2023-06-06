@@ -38,6 +38,7 @@ function createList(event) {
         })
         .then(res => res.json())
         .then(list => {
+			console.log(list)
             state.lists.push(list);
             renderAccount();
         });
